@@ -1,0 +1,15 @@
+version: '3'
+services:
+ db:
+  image: andregaytan/itlwatchbd
+  container_name: itlwatchdb
+  ports:
+   - "3306:3306"
+ web:
+   image: andregaytan/itlwatch.com
+   container_name: itlwatch.com
+   ports:
+    - "8080:8080"
+   links:
+    - "db:webapp"
+
